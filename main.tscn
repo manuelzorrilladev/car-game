@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://c2jo302j4fgbk"]
+
+[ext_resource type="PackedScene" uid="uid://clb158xhgnese" path="res://toyota.tscn" id="1_l2ovn"]
+[ext_resource type="Texture2D" uid="uid://ctjf5s6iq2u4l" path="res://assets/textures/vector-grid-marking-user-hud-interface_1284-52212.png" id="2_kmraa"]
+[ext_resource type="PackedScene" uid="uid://bawmuai5wcq7l" path="res://test_course.tscn" id="3_mhxa5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1jgb2"]
+sky_top_color = Color(0.640961, 0.701626, 0.786195, 1)
+sky_horizon_color = Color(0.723668, 0.729518, 0.739844, 1)
+ground_bottom_color = Color(0.253712, 0.216445, 0.17318, 1)
+ground_horizon_color = Color(0.723668, 0.729518, 0.739844, 1)
+
+[sub_resource type="Sky" id="Sky_208wt"]
+sky_material = SubResource("ProceduralSkyMaterial_1jgb2")
+
+[sub_resource type="Environment" id="Environment_4d1wr"]
+background_mode = 2
+sky = SubResource("Sky_208wt")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_sinou"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vkqpv"]
+albedo_texture = ExtResource("2_kmraa")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_f66hf"]
+size = Vector2(3000, 3000)
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4d1wr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29101, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.366431, 0)
+shape = SubResource("WorldBoundaryShape3D_sinou")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+material_override = SubResource("StandardMaterial3D_vkqpv")
+mesh = SubResource("PlaneMesh_f66hf")
+
+[node name="ToyotaAE86" parent="." instance=ExtResource("1_l2ovn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0270767, 0)
+
+[node name="TEST-course" parent="." instance=ExtResource("3_mhxa5")]
+transform = Transform3D(2.41048, 0, 0, 0, 1, 0, 0, 0, 2.41048, 0, 71.9082, 132.344)
+
+[editable path="ToyotaAE86"]
