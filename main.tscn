@@ -51,6 +51,6 @@ mesh = SubResource("PlaneMesh_f66hf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0270767, 0)
 
 [node name="TEST-course" parent="." instance=ExtResource("3_mhxa5")]
-transform = Transform3D(2.41048, 0, 0, 0, 1, 0, 0, 0, 2.41048, 0, 71.9082, 132.344)
+transform = Transform3D(2.41048, 0, 0, 0, 1, 0, 0, 0, 2.41048, 0, -1.76094, 132.344)
 
 [editable path="ToyotaAE86"]
