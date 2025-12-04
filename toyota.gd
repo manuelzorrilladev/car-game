@@ -10,12 +10,12 @@ const ARCADE_SLIP = 2.0
 
 # --- CONSTANTES DE VEHÍCULO (DEJADAS IGUALES) ---
 
-const ENGINE_POWER = 2500.0   
+const ENGINE_POWER = 2000.0   
 const MAX_STEER = 0.8         
 const BRAKE_POWER = 100.0     
 const MAX_TURN_ANGLE = 0.8    
 const MAX_SPEED_KMH = 180.0
-const COAST_BRAKE_POWER = 35.0 # Freno automático (al soltar el acelerador)
+const COAST_BRAKE_POWER = 1.0 # Freno automático (al soltar el acelerador)
 
 @onready var front_left_wheel = $FrontLeft
 @onready var front_right_wheel = $FrontRight
