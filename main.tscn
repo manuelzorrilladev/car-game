@@ -110,8 +110,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0270767, 0)
 center_of_mass = Vector3(0, 0, 0)
 script = ExtResource("16_0q0ls")
 
+[node name="Body" parent="ToyotaAE86" index="0"]
+transform = Transform3D(-3.14722e-08, 0.72, 0, -0.72, -3.14722e-08, 0, 0, 0, 0.72, -0.667968, 2.91698, -0.662973)
+
+[node name="CollisionShape3D" parent="ToyotaAE86" index="1"]
+transform = Transform3D(-3.14722e-08, 0.72, 0, -0.72, -3.14722e-08, 0, 0, 0, 0.72, -0.667968, 2.91698, -0.662973)
+
+[node name="FrontLeft" parent="ToyotaAE86" index="2"]
+transform = Transform3D(0.72, 0, 0, 0, 0.72, 0, 0, 0, 0.72, 1.67781, 1.85306, 1.82223)
+
+[node name="FrontRight" parent="ToyotaAE86" index="3"]
+transform = Transform3D(0.72, 0, 0, 0, 0.72, 0, 0, 0, 0.72, -3.03219, 1.85516, 1.82135)
+
+[node name="BackRight" parent="ToyotaAE86" index="4"]
+transform = Transform3D(0.72, 0, 0, 0, 0.72, 0, 0, 0, 0.72, -3.03486, 1.85384, -5.74067)
+
+[node name="BackLeft" parent="ToyotaAE86" index="5"]
+transform = Transform3D(0.72, 0, 0, 0, 0.72, 0, 0, 0, 0.72, 1.70888, 1.8456, -5.74246)
+
+[node name="CameraPivot" parent="ToyotaAE86" index="6"]
+transform = Transform3D(0.0624673, -0.00129364, 0, 0.00012646, 0.638851, 0, 0, 0, 0.72, -0.858606, 2.80297, -1.83429)
+
+[node name="CENTEROFMASS" parent="ToyotaAE86" index="7"]
+transform = Transform3D(0.72, 0, 0, 0, 0.72, 0, 0, 0, 0.72, -0.772992, 1.02233, -0.574033)
+
+[node name="Label3D" parent="ToyotaAE86" index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.74007, 6.58426, -3.48515)
+
 [node name="TEST-course" parent="." instance=ExtResource("3_mhxa5")]
-transform = Transform3D(2.41048, 0, 0, 0, 1, 0, 0, 0, 2.41048, 0, -119.525, 132.344)
+transform = Transform3D(2.41048, 0, 0, 0, 1, 0, 0, 0, 2.41048, 0, -1.33, 132.344)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
